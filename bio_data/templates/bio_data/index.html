@@ -1,0 +1,53 @@
+{% load static %}
+<html>
+    <head>
+        <title>Index - Movie Database</title>
+        <link rel="stylesheet" href="{% static 'bio_data/bootstrap-4.1.3/css/bootstrap.min.css' %}" >
+        <script src="{% static 'bio_data/bootstrap-4.1.3/js/bootstrap.min.js' %}" ></script>
+    </head>
+    <div class="container">
+        <h1>Data Store</h1>
+
+        {% if 'edit' in message %}
+            <div class="alert alert-success" role="alert">
+                Data #{{ message_id }} saved with success!
+            </div>
+        {% endif %}
+
+        {% if 'delete' in message %}
+            <div class="alert alert-danger" role="alert">
+                Data #{{ message_id }} deleted with success!
+            </div>
+        {% endif %}
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>#</th><th>Title</th><th>Genre</th><th>Duration</th><th>Rate</th><th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for data in datas %}
+                <tr>
+                    <th>{{ data.id }}</th>
+                    <td>{{ data.name }}</td>
+                    <td>{{ data.description }}</td>
+                    <td>{{ data.job }}</td>
+                    <td>{{ data.age }}</td>
+                    
+                    
+                    <td>
+                        <a class="btn btn-info" href="{% url 'data_view' data.id %}">View</a>
+                        <a class="btn btn-warning" href="{% url 'data_edit' data.id %}">Edit</a>
+                        <a class="btn btn-danger" href="{% url 'data_delete' data.id %}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+        <p><a class="btn btn-primary" href="{% url 'data_create' %}">Create New</a></p>
+    </div>
+</html>
