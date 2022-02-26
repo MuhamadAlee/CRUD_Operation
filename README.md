@@ -45,9 +45,9 @@ And navigate to ```bio_data``` App address:
 http://localhost:8000/bio_data/
 ```
 
-**Basic Guide**
+                                                       
 
-## Creating new project
+## Step 1) Creating new project
 
 Create project:
 
@@ -61,7 +61,7 @@ Create the application:
 (env) > python manage.py startapp myapp
 ```
 
-## Configure the App
+## Step 2) Configure the App
 
 Add allowed hosts to ```settings.py``` file:
 
@@ -75,7 +75,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-## Disable Admin App
+## Step 3) Disable Admin App
 
 To reduce the amount of static files, disable admin app in  ```settings.py``` file:
 
@@ -94,7 +94,7 @@ urlpatterns = [
 ]
 ```
 
-## Add Static Root to the project
+## Step 4) Add Static Root to the project
 
 Add STATIC_ROOT to the end of ```settings.py``` file:
 
@@ -102,7 +102,7 @@ Add STATIC_ROOT to the end of ```settings.py``` file:
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 ```
 
-## Finish configuration
+## Step 5) Finish configuration
 
 Run the following commands to finish the configurarion:
 
