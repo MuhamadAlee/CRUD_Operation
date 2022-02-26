@@ -10,7 +10,7 @@ This is a CRUD base for Python/Django. It relies only in HTML forms and submits 
 Clone repository:
 
 ```
-> clone ...
+> git clone https://github.com/MuhamadAlee/CRUD_Operation.git
 ```
 
 Create virtual environment:
@@ -109,6 +109,7 @@ Run the following commands to finish the configurarion:
 ```
 (env) > python ./manage.py makemigrations
 (env) > python ./manage.py migrate
+(env) > python manage.py runserver
 
 ```
 
